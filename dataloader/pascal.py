@@ -98,7 +98,7 @@ if __name__ == '__main__':
     # voc_train = VOCSegmentation(args, split='train')
     voc_val = VOCSegmentation(args, split='val')
 
-    dataloader = DataLoader(voc_val, batch_size=5, shuffle=True, num_workers=0)
+    dataloader = DataLoader(voc_val, batch_size=1, shuffle=True, num_workers=0)
 
     for ii, sample in enumerate(dataloader):
         for jj in range(sample["image"].size()[0]):

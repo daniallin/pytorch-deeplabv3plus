@@ -25,5 +25,5 @@ def data_loader(args, **kwargs):
 
     else:
         raise NotImplementedError
-    # pascal and cityscapes should be added later
+    # cityscapes should be added later
 

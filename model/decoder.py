@@ -14,6 +14,8 @@ class Decoder(nn.Module):
             low_feature_size = 128
         elif backbone == 'mobilenet':
             low_feature_size = 24
+        elif backbone == 'inception':
+            low_feature_size = 192
         else:
             raise NotImplementedError
 

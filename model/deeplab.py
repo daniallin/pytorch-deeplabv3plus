@@ -9,12 +9,12 @@ from model.decoder import Decoder
 
 class DeepLabV3Plus(nn.Module):
     def __init__(self, backbone='resnst', sync_bn=False, num_classes=1000,
-                 freeze_bn=False, output_scale=16):
+                 freeze_bn=False, output_scale=16, pretrained=False):
         super(DeepLabV3Plus, self).__init__()
         if backbone == 'drn':
             output_scale = 8
 
-        self.backbone = build_backbone(backbone, output_scale, sync_bn)
+        self.backbone = build_backbone(backbone, output_scale, sync_bn, pretrained)
         self.aspp = ASPP(backbone, output_scale, sync_bn)
         self.decoder = Decoder(backbone, num_classes, sync_bn)
 
